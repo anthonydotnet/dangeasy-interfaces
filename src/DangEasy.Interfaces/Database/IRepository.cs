@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace DangEasy.CosmosDb.Interfaces
+namespace DangEasy.Interfaces.Database
 {
     public interface IRepository<TId, TEntity>
     where TId : class

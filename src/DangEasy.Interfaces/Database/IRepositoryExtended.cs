@@ -1,10 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace DangEasy.CosmosDb.Interfaces
+namespace DangEasy.Interfaces.Databases
 {
     public interface IRepositoryExtended<TId, TEntity> : IRepository<TId, TEntity>
     where TId : class
@@ -16,7 +15,7 @@ namespace DangEasy.CosmosDb.Interfaces
 
         Task<IQueryable<TEntity>> QueryAsync(Func<TEntity, bool> predicate);
 
-        Task<IQueryable<TEntity>> QueryByStoredProcedureAsync(string sprocName);
-        Task<IQueryable<TEntity>> ExecuteStoredProcedureAsync(string sprocName);
+        Task<IQueryable<TEntity>> QueryByStoredProcedureAsync(string sprocName, params object[] parameters);
+        Task<TResult> ExecuteStoredProcedureAsync<TResult>(string sprocName, params object[] parameters);
     }
 }

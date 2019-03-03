@@ -13,6 +13,7 @@
     <PackageTags>interface, repository, pattern</PackageTags>
     <Title>DangEasy.Interfaces</Title>
     <Description>An opinionated interface library in dotnet standard 2.0 to help with application development. </Description>
+    <PackageId>DangEasy.Interfaces</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
