@@ -5,15 +5,13 @@ using System.Threading.Tasks;
 
 namespace DangEasy.Interfaces.Database
 {
-    public interface IRepositoryExtended<TId, TEntity> : IRepository<TId, TEntity>
-    where TId : class
-    where TEntity : class
+    public interface IRepositoryExtended<TEntity> : IRepository<TEntity> where TEntity : class
     {
         Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate);
 
         Task<TEntity> FirstOrDefaultAsync(Func<TEntity, bool> predicate);
 
-        Task<IQueryable<TEntity>> QueryAsync(Func<TEntity, bool> predicate);
+        Task<IQueryable<TEntity>> QueryAsync(Expression<Func<TEntity, bool>> predicate);
 
         Task<TResult> ExecuteStoredProcedureAsync<TResult>(string sprocName, params object[] parameters);
     }
