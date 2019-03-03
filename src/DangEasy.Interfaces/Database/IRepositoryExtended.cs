@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace DangEasy.Interfaces.Databases
+namespace DangEasy.Interfaces.Database
 {
     public interface IRepositoryExtended<TId, TEntity> : IRepository<TId, TEntity>
     where TId : class
