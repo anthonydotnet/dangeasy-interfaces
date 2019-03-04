@@ -17,5 +17,7 @@ namespace DangEasy.Interfaces.Database
 
         Task<TEntity> FirstOrDefaultAsync(string sqlQuery);
         Task<IQueryable<TEntity>> QueryAsync(string sqlQuery);
+        Task<TResult> ExecuteStoredProcedureAsync<TResult>(string sprocName, params object[] parameters);
+
     }
 }

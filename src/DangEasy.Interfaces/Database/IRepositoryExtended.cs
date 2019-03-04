@@ -12,7 +12,5 @@ namespace DangEasy.Interfaces.Database
         Task<TEntity> FirstOrDefaultAsync(Func<TEntity, bool> predicate);
 
         Task<IQueryable<TEntity>> QueryAsync(Expression<Func<TEntity, bool>> predicate);
-
-        Task<TResult> ExecuteStoredProcedureAsync<TResult>(string sprocName, params object[] parameters);
     }
 }
